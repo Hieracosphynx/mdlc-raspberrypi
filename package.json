@@ -1,0 +1,11 @@
+{
+  "name": "raspberry-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard that displays status (temp, ram usage, etc) for raspberry pi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Miguel Cortez",
+  "license": "ISC"
+}
