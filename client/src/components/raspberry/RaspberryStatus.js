@@ -4,13 +4,21 @@ import Thermometer from 'react-thermometer-component';
 
 const RaspberryStatus = () => {
   const statusCtx = useContext(StatusContext);
+  const { temp, getTemp } = statusCtx;
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      getTemp();
+    }, 5000);
+    return () => clearInterval(intervalId);
+  }, [temp, getTemp]);
 
   return (
     <Thermometer
       theme='dark'
-      value={`${statusCtx.temp}`}
+      value={`${temp}`}
       max='100'
-      steps='1'
+      steps='2'
       format='°C'
       size='small'
       height='300'
