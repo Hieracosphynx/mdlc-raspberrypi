@@ -5,25 +5,29 @@ import RaspberryStatus from './RaspberryStatus';
 
 const Raspberry = () => {
   return (
-    <Card
-      variant='outlined'
-      sx={{
-        bgcolor: 'background.paper',
-        boxShadow: 1,
-        borderRadius: 1,
-        p: 2,
-        maxWidth: 300,
-        backgroundColor: 'gray',
-        opacity: '90%',
-      }}
-    >
-      <CardContent>
-        <Typography align='center' variant='h5' sx={{ color: 'black' }}>
-          Raspberry
-        </Typography>
-        <RaspberryStatus />
-      </CardContent>
-    </Card>
+    // <Card
+    //   variant='outlined'
+    //   sx={{
+    //     bgcolor: 'background.paper',
+    //     boxShadow: 1,
+    //     borderRadius: 1,
+    //     p: 2,
+    //     maxWidth: 300,
+    //     backgroundColor: 'gray',
+    //     opacity: '90%',
+    //   }}
+    // >
+    <CardContent>
+      {/* <Typography
+        align='center'
+        variant='h5'
+        sx={{ color: 'black', marginBottom: '10px' }}
+      >
+        Raspberry
+      </Typography> */}
+      <RaspberryStatus />
+    </CardContent>
+    // </Card>
   );
 };
 
