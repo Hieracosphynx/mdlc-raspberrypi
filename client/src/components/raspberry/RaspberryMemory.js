@@ -9,6 +9,7 @@ const RaspberryMemory = () => {
   const { mem, getMemUsage } = statusCtx;
   const [isInitial, setIsInitial] = useState(false);
   let memPercentage = 0;
+
   useEffect(() => {
     if (!isInitial) {
       getMemUsage();
@@ -21,7 +22,7 @@ const RaspberryMemory = () => {
   }, [getMemUsage, isInitial]);
 
   memPercentage = parseFloat(((mem / 7.71) * 100).toFixed(2));
-  console.log(memPercentage);
+
   return (
     <Fragment>
       <Box
