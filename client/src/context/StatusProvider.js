@@ -6,7 +6,7 @@ const StatusProvider = (props) => {
 
   const getTempHandler = useCallback(async () => {
     try {
-      const response = await fetch('http://192.168.1.100:8080/api/raspberry/');
+      const response = await fetch('http://192.168.1.100:8080/api/raspberry/temperature');
       if (!response.ok) {
         throw new Error('No data');
       }
