@@ -32,8 +32,7 @@ const StatusProvider = (props) => {
       }
 
       const data = await response.json();
-
-      console.log(data);
+      setMemUsage(data.mem);
     } catch (err) {
       console.error(err.message);
     }
