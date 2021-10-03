@@ -5,18 +5,19 @@ import Thermometer from 'react-thermometer-component';
 const RaspberryStatus = () => {
   const [isInitial, setIsInitial] = useState(false);
   const statusCtx = useContext(StatusContext);
-  const { temp, getTemp } = statusCtx;
+  const { temp, mem, getTemp, getMemUsage } = statusCtx;
 
   useEffect(() => {
-    if(!isInitial) {
+    if (!isInitial) {
       getTemp();
       setIsInitial(true);
     }
     const intervalId = setInterval(() => {
       getTemp();
+      getMemUsage();
     }, 5000);
     return () => clearInterval(intervalId);
-  }, [temp, getTemp]);
+  }, [temp, getTemp, isInitial]);
 
   return (
     <Thermometer
