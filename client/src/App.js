@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      <div className='container-column-temp'>
+      <div className='container-column'>
         <Raspberry />
       </div>
     </div>

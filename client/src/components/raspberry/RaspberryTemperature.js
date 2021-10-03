@@ -2,10 +2,10 @@ import { useState, useContext, useEffect } from 'react';
 import StatusContext from '../../context/StatusContext';
 import Thermometer from 'react-thermometer-component';
 
-const RaspberryStatus = () => {
+const RaspberryTemperature = () => {
   const [isInitial, setIsInitial] = useState(false);
   const statusCtx = useContext(StatusContext);
-  const { temp, mem, getTemp, getMemUsage } = statusCtx;
+  const { temp, getTemp } = statusCtx;
 
   useEffect(() => {
     if (!isInitial) {
@@ -14,7 +14,6 @@ const RaspberryStatus = () => {
     }
     const intervalId = setInterval(() => {
       getTemp();
-      getMemUsage();
     }, 5000);
     return () => clearInterval(intervalId);
   }, [temp, getTemp, isInitial]);
@@ -32,4 +31,4 @@ const RaspberryStatus = () => {
   );
 };
 
-export default RaspberryStatus;
+export default RaspberryTemperature;
