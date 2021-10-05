@@ -6,9 +6,9 @@ import StatusContext from '../../context/StatusContext';
 
 const RaspberryMemory = () => {
   const statusCtx = useContext(StatusContext);
-  const { mem, getMemUsage } = statusCtx;
+  const { mem, type, getMemUsage } = statusCtx;
   const [isInitial, setIsInitial] = useState(false);
-  let memPercentage = 0;
+  let memPercentage = parseFloat(((mem / 7.71) * 100).toFixed(2));
 
   useEffect(() => {
     if (!isInitial) {
@@ -21,7 +21,6 @@ const RaspberryMemory = () => {
     return () => clearInterval(intervalId);
   }, [getMemUsage, isInitial]);
 
-  memPercentage = parseFloat(((mem / 7.71) * 100).toFixed(2));
 
   return (
     <Fragment>
@@ -34,7 +33,7 @@ const RaspberryMemory = () => {
         }}
       >
         <Typography variant='caption' sx={{}}>
-          Usage: {`${mem}GiB`}
+          Usage: {`${mem}${type}`}
         </Typography>
         <Typography variant='caption' sx={{}}>
           7.71GiB
