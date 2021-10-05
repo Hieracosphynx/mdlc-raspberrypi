@@ -6,9 +6,8 @@ import StatusContext from '../../context/StatusContext';
 
 const RaspberryMemory = () => {
   const statusCtx = useContext(StatusContext);
-  const { mem, type, getMemUsage } = statusCtx;
+  const { mem, memPercent, type, getMemUsage } = statusCtx;
   const [isInitial, setIsInitial] = useState(false);
-  let memPercentage = parseFloat(((mem / 7.71) * 100).toFixed(2));
 
   useEffect(() => {
     if (!isInitial) {
@@ -41,7 +40,7 @@ const RaspberryMemory = () => {
       </Box>
       <LinearProgress
         variant='determinate'
-        value={memPercentage}
+        value={memPercent}
         sx={{
           width: '90%',
         }}

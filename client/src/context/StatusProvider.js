@@ -6,6 +6,7 @@ const StatusProvider = (props) => {
   const [memUsage, setMemUsage] = useState(0);
   const [memPercentage, setMemPercentage] = useState(0);
   const [sizeType, setSizeType] = useState('');
+  
   const getTempHandler = useCallback(async () => {
     try {
       const response = await fetch(
